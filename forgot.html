@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http="Content-Type" content="text/html" charset="UTF-8">
+	<title>Forgot Page</title>
+	<link rel="stylesheet" href="css/forgot.css">
+	<style>
+	#snackbar{
+		visibility:hidden;
+		min-width: 250px;
+		background-color: yellow;
+		color:#000;
+		border-radius: 2px;
+        padding:16px;
+        position: fixed;
+        z-index: 1;
+        right:30%;
+        top:30px;
+        font-size:17px;
+        margin-right: 134px
+	}
+	#snackbar.show{
+		visibility: visible;
+		-webkit-animation:fadein 0.5s, fadeout 0.5s 2.5s;
+		animation:fadein 0.5s,fadeout 0.5s 2.5s;
+	}
+	@-webkit-keyframes fadein{
+		from{top:0;opacity:0;}
+		to{top:0; opacity:1;}
+
+	}
+	@keyframes fadein{
+		from{top:0;opacity:0;}
+		to{top:30px; opacity:1;}
+	}
+	@-webkit-keyframes fadeout{
+		from{top:30px;opacity:1;}
+		to{top:0; opacity:0;}
+
+	}
+	@keyframes fadeout{
+		from{top:30px;opacity:1;}
+		to{top:0px; opacity:0;}
+	}
+</style>
+
+</head>
+<body>
+	<div class="forgot">
+	<form>
+			<h2 align="left" style=color:"#fff">Forgot Password</h2>
+			<h5 style="font-size:14px; color:yellow;">Enter email to Reset Password</h5>
+			<input type="text" name="email" placeholder="Enter email"><br/><br/>
+			<input type="button" value="Send" onclick="myfunction()"><br/><br/>
+			<a href="index.html" style="text-decoration: none;">Go back to home page</a><br/><br/>
+			<div id="snackbar">Link send on your email successfully</div>
+			<script>
+					function myfunction(){
+                    var x=document.getElementById("snackbar") ;
+					x.className="show";
+					setTimeout(function(){x.className =
+					x.className.replace("show",""); }, 3000);
+
+					}
+				</script>
+	</form>
+</div>
+</body>
+</html>
